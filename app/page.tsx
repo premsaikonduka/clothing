@@ -1,6 +1,7 @@
 export default function HomeBanner() {
   return (
-    <div className="w-full mx-auto mb-10">
+    <div className="w-full mx-auto mb-10 pt-[120px]"> 
+      {/* ⬆⬆⬆ Added padding to push banner below fixed navbar */}
 
       {/* VIDEO BANNER */}
       <div className="max-w-[90vw] 2xl:max-w-[1600px] mx-auto my-5 md:my-10">
@@ -50,7 +51,7 @@ export default function HomeBanner() {
       {/* BELOW BUTTON ROW */}
       <div className="flex justify-between max-w-[90vw] mx-auto mb-5 xl:mt-12">
 
-        {/* Shop By Season Button + Drop text */}
+        {/* Shop By Season */}
         <div>
           <a href="/shop/shop-by-season">
             <button
