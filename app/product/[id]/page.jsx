@@ -2,6 +2,9 @@
 
 import React, { useState } from "react";
 import { Heart, ShoppingCart, Plus, Minus } from "lucide-react";
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 
 // ------------------------- PRODUCT DATA -------------------------
 const productData = {
