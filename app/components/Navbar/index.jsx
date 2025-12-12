@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
+import Link from "next/link";
 import LoginModal from "../Login/Index"; // IMPORTANT
 
 export default function Navbar() {
@@ -60,28 +61,33 @@ export default function Navbar() {
           <nav className="hidden xl:flex gap-10 flex-1">
             {menuItems.map((item, index) => (
               <div key={index} className="relative group">
-                <a href="/shop" className="uppercase text-sm font-light">
+                <Link href="/shop" className="uppercase text-sm font-light">
                   {item.title}
-                </a>
+                </Link>
 
                 <div className="absolute hidden group-hover:block bg-[#E8E7E4] mt-3 shadow-lg w-40">
                   {item.submenu.map((sub, i) => (
-                    <a
+                    <Link
                       key={i}
                       href={sub.href}
                       className="block py-3 px-4 text-sm font-light hover:font-normal"
                     >
                       {sub.label}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </div>
             ))}
           </nav>
 
-          {/* LOGO */}
+          {/* LOGO → NOW CLICKABLE */}
           <div className="flex justify-center flex-1 xl:flex-none">
-            <h1 className="text-3xl font-bold tracking-wider">RWDY</h1>
+            <Link
+              href="/"
+              className="text-3xl font-bold tracking-wider cursor-pointer"
+            >
+              RWDY
+            </Link>
           </div>
 
           {/* RIGHT SIDE */}
@@ -89,7 +95,9 @@ export default function Navbar() {
 
             {/* Desktop Buttons */}
             <div className="hidden xl:flex gap-10 items-center">
-              <a href="/cart" className="uppercase text-sm font-light">Cart</a>
+              <Link href="/cart" className="uppercase text-sm font-light">
+                Cart
+              </Link>
 
               <span
                 className="uppercase text-sm font-light cursor-pointer"
@@ -113,14 +121,16 @@ export default function Navbar() {
         {mobileOpen && (
           <div className="bg-[#f5f5f5] p-5 flex flex-col gap-4 text-center xl:hidden">
             {menuItems.map((item, index) => (
-              <a key={index} href="/shop" className="uppercase text-sm font-light">
+              <Link key={index} href="/shop" className="uppercase text-sm font-light">
                 {item.title}
-              </a>
+              </Link>
             ))}
 
             <hr className="border-gray-300" />
 
-            <a href="/cart" className="uppercase text-sm font-light">Cart</a>
+            <Link href="/cart" className="uppercase text-sm font-light">
+              Cart
+            </Link>
 
             <span
               onClick={() => {
