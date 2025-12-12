@@ -1,0 +1,1 @@
+export const REGISTER_CUSTOMER = "/api/auth/customer/register";
